@@ -1,0 +1,57 @@
+[
+    {
+        "id": "bd819093ef672f8d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "09f8c6151413e7d0",
+        "type": "inject",
+        "z": "bd819093ef672f8d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "cae227b408f96471"
+            ]
+        ]
+    },
+    {
+        "id": "cae227b408f96471",
+        "type": "debug",
+        "z": "bd819093ef672f8d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 120,
+        "wires": []
+    }
+]
+
+Sólo prueba
