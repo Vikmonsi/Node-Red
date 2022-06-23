@@ -1,0 +1,154 @@
+[
+    {
+        "id": "7a0349f4b61a4beb",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d15ecec822cccb3f",
+        "type": "inject",
+        "z": "7a0349f4b61a4beb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "g9",
+                "v": "saludos g9",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "3ff1fe1acebdb9a4",
+                "fd8ff1d752bf9be4"
+            ]
+        ]
+    },
+    {
+        "id": "0addfdb14efe9a84",
+        "type": "debug",
+        "z": "7a0349f4b61a4beb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3ff1fe1acebdb9a4",
+        "type": "function",
+        "z": "7a0349f4b61a4beb",
+        "name": "",
+        "func": "\n// Lo que está después de “//” son comentarios\n// Crea un objeto Date a partir del payload enviado por timestamp\nvar date = new Date(msg.payload);\n// Cambia el payload para que sea una fecha con formato\nmsg.payload = date.toString();\n// Regresa el mensaje para que se envíe al sigueinte nodo\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "0addfdb14efe9a84",
+                "1dee319cf36c8e49",
+                "c80e55911acda1ce"
+            ]
+        ]
+    },
+    {
+        "id": "1dee319cf36c8e49",
+        "type": "debug",
+        "z": "7a0349f4b61a4beb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "g9",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "fd8ff1d752bf9be4",
+        "type": "debug",
+        "z": "7a0349f4b61a4beb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c80e55911acda1ce",
+        "type": "ui_text",
+        "z": "7a0349f4b61a4beb",
+        "group": "a47848c3caa57697",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "La hora es:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a47848c3caa57697",
+        "type": "ui_group",
+        "name": "Fecha actual - Grupo",
+        "tab": "c1b5862c32f51930",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c1b5862c32f51930",
+        "type": "ui_tab",
+        "name": "Flow 2 - Hora",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
